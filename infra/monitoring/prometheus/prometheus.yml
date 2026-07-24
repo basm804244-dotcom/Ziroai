@@ -1,0 +1,43 @@
+global:
+  scrape_interval: 15s
+  evaluation_interval: 15s
+
+scrape_configs:
+  - job_name: 'prometheus'
+    static_configs:
+      - targets: ['localhost:9090']
+
+  - job_name: 'api-gateway'
+    static_configs:
+      - targets: ['api-gateway:8080']
+    metrics_path: '/metrics'
+
+  - job_name: 'auth-service'
+    static_configs:
+      - targets: ['auth-service:8001']
+    metrics_path: '/metrics'
+
+  - job_name: 'chat-service'
+    static_configs:
+      - targets: ['chat-service:8002']
+    metrics_path: '/metrics'
+
+  - job_name: 'agent-service'
+    static_configs:
+      - targets: ['agent-service:8003']
+    metrics_path: '/metrics'
+
+  - job_name: 'model-service'
+    static_configs:
+      - targets: ['model-service:8004']
+    metrics_path: '/metrics'
+
+  - job_name: 'memory-service'
+    static_configs:
+      - targets: ['memory-service:8005']
+    metrics_path: '/metrics'
+
+  - job_name: 'rag-service'
+    static_configs:
+      - targets: ['rag-service:8006']
+    metrics_path: '/metrics'

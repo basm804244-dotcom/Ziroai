@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: aether-config
+  namespace: aether
+data:
+  APP_ENV: "production"
+  API_GATEWAY_PORT: "8080"
+  LOG_LEVEL: "info"
+  CORS_ORIGINS: "https://aether.ai,https://app.aether.ai"
